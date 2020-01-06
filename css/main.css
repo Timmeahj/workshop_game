@@ -407,6 +407,18 @@ body{
   font-size: 24px;
 }
 
+#cursor{
+  width: 30px;
+  height: 30px;
+  border: 1px solid white;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0.7;
+  -webkit-box-shadow: 0px 0px 25px -4px rgba(164,222,237,1);
+  -moz-box-shadow: 0px 0px 25px -4px rgba(164,222,237,1);
+  box-shadow: 0px 0px 25px -4px rgba(164,222,237,1);
+}
+
 .overlayWin{
   background: white!important;
   color: black!important;

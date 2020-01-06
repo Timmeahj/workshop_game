@@ -379,6 +379,20 @@ body{
   z-index: 10000000000000000!important;
 }
 
+.gameWin{
+  width: 100%!important;
+  height: 100vh!important;
+  top: 0!important;
+  left: 0!important;
+  margin-top: 0!important;
+  margin-left: 0!important;
+  border-radius: 0!important;
+  border: 0 solid white!important;
+  background: white!important;
+  transition: 2s!important;
+  z-index: 100000000000000000!important;
+}
+
 .overlay{
   position: fixed;
   width: 100%;
@@ -391,6 +405,22 @@ body{
   text-align: center;
   padding-top: 50px;
   font-size: 24px;
+}
+
+.overlayWin{
+  background: white!important;
+  color: black!important;
+  z-index: 1000000000000000000000!important;
+}
+
+.winLink{
+  border: 2px solid black!important;
+  color: black!important;
+}
+
+.winLink:hover{
+  background: black!important;
+  color: white!important;
 }
 
 .overlay a{

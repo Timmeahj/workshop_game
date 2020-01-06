@@ -14,6 +14,7 @@ const target = document.getElementById('target');
 const dead = document.getElementById('dead');
 let enemies = document.getElementsByClassName('enemy');
 
+let winScore = 350;
 let targetSpeed = 0.3;
 let enemySpeed = 1.2;
 let deadSpeed = 1.5;
@@ -126,9 +127,16 @@ function getPoint() {
   }
   animate(target);
   pointAnimate();
-  score++;
+  if(score < winScore){
+    score++;
+  }
   setScore();
-  move(target);
+  if(score < winScore){
+    move(target);
+  }
+  if(score === winScore){
+    winGame();
+  }
   if(score >= spawnDeadWhen){
     spawn(dead);
   }
@@ -186,4 +194,26 @@ function loseGame(){
     }, 50);
   }, 2000);
   document.getElementById("overlaytext").innerHTML = "Game over, your score was "+score+"!";
+}
+
+function winGame(){
+  //dead.classList.add('gone');
+  for(let i = 0; i < enemies.length; i++){
+    enemies[i].classList.add('gone');
+  }
+  clearInterval(death);
+  clearInterval(collision);
+  target.classList.add("yeet");
+  document.getElementById('link').classList.add('winLink');
+  setTimeout(function(){
+    target.classList.add("gameWin");
+  }, 50);
+  setTimeout(function(){
+    document.getElementById("overlay").classList.remove('gone');
+    setTimeout(function(){
+      document.getElementById("overlay").classList.add('yeet');
+      document.getElementById("overlay").classList.add('overlayWin');
+    }, 50);
+  }, 2000);
+  document.getElementById("overlaytext").innerHTML = "You crazy son of a bitch, you did it! You won!";
 }

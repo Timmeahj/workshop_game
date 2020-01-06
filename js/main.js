@@ -35,7 +35,7 @@ document.onmousemove = findMouse;
 function findMouse(e){
   mouseX = e.pageX+15;
   mouseY = e.pageY;
-  document.getElementById('cursor').style.marginTop = mouseY-48+"px";
+  document.getElementById('cursor').style.marginTop = mouseY-60+"px";
   document.getElementById('cursor').style.marginLeft = mouseX-15+"px";
 }
 

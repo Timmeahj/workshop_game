@@ -10,7 +10,7 @@ let mouseY = 0;
 let spawnEnemyInterval = 10;
 let spawnLifeInterval = 25;
 let spawnSnitchInterval = 100;
-let spawnShieldInterval = 11;
+let spawnShieldInterval = 75;
 
 let spawnBoss = 50;
 

@@ -6,9 +6,6 @@
   <title></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="css/normalize.css">
@@ -17,8 +14,12 @@
   <meta name="theme-color" content="#fafafa">
 </head>
 
-<body>
-  <div id="overlay" class="overlay gone"><p id="overlaytext"></p><a id="link" href="./index.html">Play again!</a></div>
+<body id="body">
+  <div id="cursor"><span id="counter"></span></div>
+  <div id="overlayLoss" class="gone">
+    <p>You died.<br><span id="highscore"></span></p>
+    <a class="button" href="./index.html">Play again</a>
+  </div>
   <div id="bar" class="bar">
     <div class="barwrap">
       <div class="score">Score: <span id="score"></span></div>
@@ -26,19 +27,7 @@
     </div>
   </div>
   <div id="game">
-    <div id="cursor"></div>
     <div id="target"></div>
-    <div id="dead"></div>
-    <div class="enemy"></div>
-    <div class="enemy"></div>
-    <div class="enemy"></div>
-    <div class="enemy"></div>
-    <div class="enemy"></div>
-    <div class="enemy"></div>
-    <div class="enemy"></div>
-    <div class="enemy"></div>
-    <div class="enemy"></div>
-    <div class="enemy"></div>
   </div>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>

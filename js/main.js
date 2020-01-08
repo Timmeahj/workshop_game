@@ -19,6 +19,7 @@ let shieldTime = 5000;
 initialise();
 
 function initialise(){
+  document.addEventListener('contextmenu', event => event.preventDefault());
   setScore();
   setLives();
   setSpeed(target, 0.4);
@@ -103,6 +104,13 @@ function move(element) {
     let y = Math.floor(Math.random() * (getScreenHeight() - getHeight(element)));
     element.style.marginLeft = x + "px";
     element.style.marginTop = y + "px";
+}
+
+function moveChaser(element){
+  let x = mouseX;
+  let y = mouseY;
+  element.style.marginLeft = x + "px";
+  element.style.marginTop = y + "px";
 }
 
 function enemyMove(element) {
@@ -280,8 +288,7 @@ function getHeight(element) {
 }
 
 function getSpeed(element) {
-    let speed = element.style.transition.replace('all ', '');
-    return speed.replace('s ease 0s', '');
+    return element.style.transitionDuration.replace('s', '');
 }
 
 function setScore() {
@@ -293,5 +300,5 @@ function setLives() {
 }
 
 function setSpeed(element, speed) {
-    element.style.transition = speed + "s";
+    element.style.transitionDuration = speed + "s";
 }
